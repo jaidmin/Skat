@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26720.2
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api", "Api\Api.csproj", "{AA147315-D5AB-4223-9242-A3986268AED7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CredentialsClient", "ConsoleClient\CredentialsClient.csproj", "{A229A158-1118-412F-B06C-3A427C8CAA59}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ResourceOwnerPasswordClient", "ResourceOwnerPasswordClient\ResourceOwnerPasswordClient.csproj", "{8608476A-6BBE-44D5-BE16-7340100E35EE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvcClient", "MvcClient\MvcClient.csproj", "{8253767F-7F7A-4A3E-8B18-F9F248DF26C2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServerWithAspNetIdentity", "IdentityServerWithAspNetIdentity\IdentityServerWithAspNetIdentity.csproj", "{1667A3CD-C83B-4E70-8C5E-C866C039B843}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SkatLib", "SkatLib\SkatLib.csproj", "{CDFABE7B-F76A-44C1-8133-FCDE00A23BB1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AA147315-D5AB-4223-9242-A3986268AED7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA147315-D5AB-4223-9242-A3986268AED7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA147315-D5AB-4223-9242-A3986268AED7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA147315-D5AB-4223-9242-A3986268AED7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A229A158-1118-412F-B06C-3A427C8CAA59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A229A158-1118-412F-B06C-3A427C8CAA59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A229A158-1118-412F-B06C-3A427C8CAA59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A229A158-1118-412F-B06C-3A427C8CAA59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8608476A-6BBE-44D5-BE16-7340100E35EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8608476A-6BBE-44D5-BE16-7340100E35EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8608476A-6BBE-44D5-BE16-7340100E35EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8608476A-6BBE-44D5-BE16-7340100E35EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8253767F-7F7A-4A3E-8B18-F9F248DF26C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8253767F-7F7A-4A3E-8B18-F9F248DF26C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8253767F-7F7A-4A3E-8B18-F9F248DF26C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8253767F-7F7A-4A3E-8B18-F9F248DF26C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1667A3CD-C83B-4E70-8C5E-C866C039B843}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1667A3CD-C83B-4E70-8C5E-C866C039B843}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1667A3CD-C83B-4E70-8C5E-C866C039B843}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1667A3CD-C83B-4E70-8C5E-C866C039B843}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDFABE7B-F76A-44C1-8133-FCDE00A23BB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDFABE7B-F76A-44C1-8133-FCDE00A23BB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDFABE7B-F76A-44C1-8133-FCDE00A23BB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDFABE7B-F76A-44C1-8133-FCDE00A23BB1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2BBC4E49-012D-488B-86B2-D7F376683993}
+	EndGlobalSection
+EndGlobal
