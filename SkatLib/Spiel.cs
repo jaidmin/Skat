@@ -25,35 +25,35 @@ namespace SkatLib
     public class Spiel
     {
         //abend is passed to acces ruleset--> will be changed later, when ruleset is accesible via Database
-        public Abend abend;
+        public Abend abend { get; set; }
 
         //passed variables
-        public Spieler spieler;
-        public Spieler geber;
+        public Spieler spieler { get; set; }
+        public Spieler geber { get; set; }
 
         public int id { get; set; }
-        public int abendId;
+        public int abendId { get; set; }
 
-        public Spieltyp spieltyp;
-        public Farbe farbe;
-        public Spielstaerke spielstaerke;
-        public Ansage ansage;
+        public Spieltyp spieltyp { get; set; }
+        public Farbe farbe { get; set; }
+        public Spielstaerke spielstaerke { get; set; }
+        public Ansage ansage { get; set; }
 
-        public bool bock;
-        public bool re;
-        public bool kontra;
-        public bool hand;
-        public bool ouvert;
+        public bool bock { get; set; }
+        public bool re { get; set; }
+        public bool kontra { get; set; }
+        public bool hand { get; set; }
+        public bool ouvert { get; set; }
 
-        public int punkte;
-        public int spielNummer;
+        public int punkte { get; set; }
+        public int spielNummer { get; set; }
 
         //other variables
-        public DateTime datetime;
+        public DateTime datetime { get; set; }
 
-        public bool gewonnen;
+        public bool gewonnen { get; set; }
 
-        public int spielwert;
+        public int spielwert { get; set; }
 
         private Spiel()
         {

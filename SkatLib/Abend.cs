@@ -1,15 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace SkatLib
 {
     public class Abend
     {
         public int id { get; set; }
-        public List<Spieler> spieler;
-        public List<Spiel> spiele;
-        public DateTime datetime;
-        public AbendRegeln abendRegeln;
-        public List<int> spielStand;
+        public List<Spieler> spieler { get; set; }
+        public List<Spiel> spiele { get; set; }
+        public DateTime datetime { get; set; }
+        public AbendRegeln abendRegeln { get; set; }
+        public List<int> spielStand { get; set; }
         
         public Abend(List<Spieler> spieler, AbendRegeln abendRegeln)
         {

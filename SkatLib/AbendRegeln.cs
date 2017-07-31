@@ -1,6 +1,6 @@
 ﻿namespace SkatLib
 {
-    public struct AbendRegeln
+    public class AbendRegeln
     {
         public SchneiderAb schneiderAb;
         public BockRamsch bockRamsch;

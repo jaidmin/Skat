@@ -25,7 +25,11 @@ namespace Api.Controllers
         [HttpGet]
         public IEnumerable<Spiel> Getspiele()
         {
-            return _context.spiele;
+            return _context.spiele
+                .Include(s => s.abend)
+                .Include(s => s.spieler)
+                .Include(s => s.geber)
+                .ToList();
         }
 
         // GET: api/Spiel/5
