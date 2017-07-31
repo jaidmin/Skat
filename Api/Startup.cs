@@ -20,6 +20,8 @@ namespace Api
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
                 .AddEnvironmentVariables();
             Configuration = builder.Build();
+
+            Initializer.SeedData();
         }
 
         public IConfigurationRoot Configuration { get; }
@@ -29,6 +31,7 @@ namespace Api
         {
             // Add framework services.
             services.AddMvc();
+            services.AddDbContext<SkatContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
