@@ -24,8 +24,7 @@ namespace SkatLib
 
     public class Spiel
     {
-        //abend is passed to acces ruleset--> will be changed later, when ruleset is accesible via Database
-        public Abend abend { get; set; }
+        //abend is passed to access ruleset--> will be changed later, when ruleset is accesible via Database
 
         //passed variables
         public Spieler spieler { get; set; }
@@ -44,6 +43,7 @@ namespace SkatLib
         public bool kontra { get; set; }
         public bool hand { get; set; }
         public bool ouvert { get; set; }
+        public Regeln regeln { get; set; }
 
         public int punkte { get; set; }
         public int spielNummer { get; set; }
@@ -59,10 +59,12 @@ namespace SkatLib
         {
             
         }
-        public Spiel(Abend abend, int abendId,  int spielNummer, Spieler spieler, Spieler geber, Spieltyp spieltyp, Farbe farbe, Spielstaerke spielstaerke, Ansage ansage, bool bock, bool re, bool kontra, bool hand, bool ouvert, int punkte)
+        public Spiel(int abendId, Regeln regeln,  int spielNummer, Spieler spieler, Spieler geber, Spieltyp spieltyp, Farbe farbe, Spielstaerke spielstaerke, Ansage ansage, bool bock, bool re, bool kontra, bool hand, bool ouvert, int punkte)
         {
             //pass parameters to local variables
+            
             this.abendId = abendId;
+            this.regeln = regeln;
             this.spielNummer = spielNummer;
             this.spieler = spieler;
             this.geber = geber;
@@ -101,7 +103,8 @@ namespace SkatLib
         //check which type of game was played and calculate the points based on that
         private void calculateSpielwert()
         {
-            switch (spieltyp){
+            switch (spieltyp)
+            {
                 case Spieltyp.FARBE:
                     spielwert = (int)farbe * (int)spielstaerke;
                     break;
@@ -124,18 +127,34 @@ namespace SkatLib
                     }
                     break;
                 case Spieltyp.GRAND:
-                    spielwert = (int)abend.abendRegeln.grandwert * (int)spielstaerke;
+                    spielwert = (int)regeln.grandwert * (int)spielstaerke;
                     break;
+                
                 case Spieltyp.RAMSCH:
                     break;
             }
-            
+            if (spieltyp != Spieltyp.NULL && spieltyp != Spieltyp.RAMSCH)
+            {
+                if (hand == true)
+                {
+                    spielwert = spielwert * 2;
+                    switch (ansage)
+                    {
+                        case Ansage.SCHNEIDER:
+                            spielwert = spielwert * 2;
+                            break;
+                        case Ansage.SCHWARZ:
+                            spielwert = spielwert * 4;
+                            break;
+
+                    }
+                }
+            }
         }
 
-        public Spiel(int abendId, Ansage ansage)
-        {
-            this.abendId = abendId;
-
-        }
+       // public Spiel(int abendId, Ansage ansage)
+       // {
+       //     this.abendId = abendId;
+       // }
     }
 }

@@ -11,62 +11,57 @@ using SkatLib;
 namespace Api.Controllers
 {
     [Produces("application/json")]
-    [Route("api/Spiel")]
-    public class SpielController : Controller
+    [Route("api/Spieler")]
+    public class SpielerController : Controller
     {
         private readonly SkatContext _context;
 
-        public SpielController(SkatContext context)
+        public SpielerController(SkatContext context)
         {
             _context = context;
         }
 
-        // GET: api/Spiel
+        // GET: api/Spieler
         [HttpGet]
-        public IEnumerable<Spiel> Getspiele()
+        public IEnumerable<Spieler> Getspieler()
         {
-            return _context.spiele
-                .Include(s => s.spieler)
-                .Include(s => s.geber)
-                .Include(s => s.regeln)
-                    .ThenInclude(r => r.bockRamsch)
-                .ToList();
+            return _context.spieler;
         }
 
-        // GET: api/Spiel/5
+        // GET: api/Spieler/5
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetSpiel([FromRoute] int id)
+        public async Task<IActionResult> GetSpieler([FromRoute] int id)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var spiel = await _context.spiele.SingleOrDefaultAsync(m => m.id == id);
+            var spieler = await _context.spieler.SingleOrDefaultAsync(m => m.id == id);
 
-            if (spiel == null)
+            if (spieler == null)
             {
                 return NotFound();
             }
 
-            return Ok(spiel);
+            return Ok(spieler);
         }
 
-        // PUT: api/Spiel/5
+        // PUT: api/Spieler/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutSpiel([FromRoute] int id, [FromBody] Spiel spiel)
+        public async Task<IActionResult> PutSpieler([FromRoute] int id, [FromBody] Spieler spieler)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != spiel.id)
+            if (id != spieler.id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(spiel).State = EntityState.Modified;
+            _context.Entry(spieler).State = EntityState.Modified;
 
             try
             {
@@ -74,7 +69,7 @@ namespace Api.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!SpielExists(id))
+                if (!SpielerExists(id))
                 {
                     return NotFound();
                 }
@@ -87,45 +82,45 @@ namespace Api.Controllers
             return NoContent();
         }
 
-        // POST: api/Spiel
+        // POST: api/Spieler
         [HttpPost]
-        public async Task<IActionResult> PostSpiel([FromBody] Spiel spiel)
+        public async Task<IActionResult> PostSpieler([FromBody] Spieler spieler)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            _context.spiele.Add(spiel);
+            _context.spieler.Add(spieler);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetSpiel", new { id = spiel.id }, spiel);
+            return CreatedAtAction("GetSpieler", new { id = spieler.id }, spieler);
         }
 
-        // DELETE: api/Spiel/5
+        // DELETE: api/Spieler/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteSpiel([FromRoute] int id)
+        public async Task<IActionResult> DeleteSpieler([FromRoute] int id)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var spiel = await _context.spiele.SingleOrDefaultAsync(m => m.id == id);
-            if (spiel == null)
+            var spieler = await _context.spieler.SingleOrDefaultAsync(m => m.id == id);
+            if (spieler == null)
             {
                 return NotFound();
             }
 
-            _context.spiele.Remove(spiel);
+            _context.spieler.Remove(spieler);
             await _context.SaveChangesAsync();
 
-            return Ok(spiel);
+            return Ok(spieler);
         }
 
-        private bool SpielExists(int id)
+        private bool SpielerExists(int id)
         {
-            return _context.spiele.Any(e => e.id == id);
+            return _context.spieler.Any(e => e.id == id);
         }
     }
 }

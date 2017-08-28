@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26720.2
+VisualStudioVersion = 15.0.26823.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api", "Api\Api.csproj", "{AA147315-D5AB-4223-9242-A3986268AED7}"
 EndProject
@@ -14,6 +14,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServerWithAspNetIdentity", "IdentityServerWithAspNetIdentity\IdentityServerWithAspNetIdentity.csproj", "{1667A3CD-C83B-4E70-8C5E-C866C039B843}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SkatLib", "SkatLib\SkatLib.csproj", "{CDFABE7B-F76A-44C1-8133-FCDE00A23BB1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground", "Playground\Playground.csproj", "{5E38CA6C-6C96-455A-A407-19AE76D977F1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{CDFABE7B-F76A-44C1-8133-FCDE00A23BB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDFABE7B-F76A-44C1-8133-FCDE00A23BB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDFABE7B-F76A-44C1-8133-FCDE00A23BB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E38CA6C-6C96-455A-A407-19AE76D977F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E38CA6C-6C96-455A-A407-19AE76D977F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E38CA6C-6C96-455A-A407-19AE76D977F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E38CA6C-6C96-455A-A407-19AE76D977F1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

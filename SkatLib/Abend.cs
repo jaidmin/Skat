@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-
+using System.Linq;
 namespace SkatLib
 {
     public class Abend
@@ -10,22 +10,39 @@ namespace SkatLib
         public List<Spieler> spieler { get; set; }
         public List<Spiel> spiele { get; set; }
         public DateTime datetime { get; set; }
-        public AbendRegeln abendRegeln { get; set; }
-        public List<int> spielStand { get; set; }
-        
-        public Abend(List<Spieler> spieler, AbendRegeln abendRegeln)
+        public Regeln regeln { get; set; }
+        private string _spielStand;
+        [NotMapped]
+        public List<int> spielStand
+        { 
+            get
+            {
+                List<int> list_int = new List<int>();
+                foreach (string number_string in _spielStand.Split(',').ToList())
+                {
+                    list_int.Add(int.Parse(number_string));
+                }
+                return list_int;
+            }
+            set
+            {
+                _spielStand = String.Join<int>(",", value);
+            }
+        }
+
+        public Abend(List<Spieler> spieler, Regeln regeln)
         {
-            this.datetime = System.DateTime.Now;
+            datetime = System.DateTime.Now;
             this.spieler = spieler;
-            this.spiele = new List<Spiel>();
-            this.abendRegeln = abendRegeln;
-            this.spielStand = new List<int>{0,0,0};
+            spiele = new List<Spiel>();
+            this.regeln = regeln;
+            _spielStand = "0,0,0";
         
         }
 
         private Abend()
         {
-            
+            _spielStand = "0,0,0";
         }
 
 

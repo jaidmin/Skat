@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using SkatLib;
 
-namespace Api
+namespace Playground
 {
     public class Initializer
     {
@@ -48,8 +48,6 @@ namespace Api
 
 
             var spiel = new Spiel(abend.id, regeln, 0, spieler1, spieler2, Spieltyp.FARBE, Farbe.HERZ, Spielstaerke.M1, Ansage.KEINE, false, true, true, false, false, 59);
-            var spiel2 = new Spiel(abend.id, regeln, 1, spieler1, spieler2, Spieltyp.FARBE, Farbe.PIK, Spielstaerke.O1, Ansage.SCHWARZ, false, true, true, true, false, 69);
-            abend.addSpiel(spiel);
 
 
 
@@ -62,7 +60,7 @@ namespace Api
                 skatContext.SaveChanges();
                 skatContext.abende.Add(abend);
                 skatContext.SaveChanges();
-                skatContext.spiele.Add(spiel2);
+                skatContext.spiele.Add(spiel);
                 skatContext.SaveChanges();
             }
         }
