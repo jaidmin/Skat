@@ -24,11 +24,20 @@ namespace Playground
             Console.WriteLine(spiele[0].regeln.bockRamsch.KontraGewonnen);
             Console.WriteLine("Hello World!");
             List<Abend> abende  = _context.abende
-                                 .Include(a => a.abendRegeln)
+                                 .Include(a => a.regeln)
                                  .Include(a => a.spiele)
                                  .Include(a => a.spieler)
                                  .ToList();
-            Console.WriteLine(abende[0].abendRegeln.eingepassterRamsch);
+            Console.WriteLine(abende[0].regeln.eingepassterRamsch);
+
+            Abend abend = abende[0];
+            Console.WriteLine(abend.spiele.Count);
+            abend.addSpiel(spiele[0]);
+            Console.WriteLine(abend.spiele.Count);
+            Console.WriteLine(String.Join<int>(",",abend.spielStand));
+            abend.calculateSpielstand();
+            Console.WriteLine(String.Join<int>(",",abend.spielStand));
+
         }
     }
 }

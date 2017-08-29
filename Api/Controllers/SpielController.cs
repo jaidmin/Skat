@@ -42,7 +42,12 @@ namespace Api.Controllers
                 return BadRequest(ModelState);
             }
 
-            var spiel = await _context.spiele.SingleOrDefaultAsync(m => m.id == id);
+            var spiel = await _context.spiele
+                                      .Include(s => s.spieler)
+                                      .Include(s => s.geber)
+                                      .Include(s => s.regeln)
+                                          .ThenInclude(r => r.bockRamsch)
+                                      .SingleOrDefaultAsync(m => m.id == id);
 
             if (spiel == null)
             {

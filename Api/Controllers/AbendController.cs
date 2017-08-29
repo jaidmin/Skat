@@ -42,7 +42,12 @@ namespace Api.Controllers
                 return BadRequest(ModelState);
             }
 
-            var abend = await _context.abende.SingleOrDefaultAsync(m => m.id == id);
+            var abend = await _context.abende
+                                      .Include(a => a.spiele)
+                                      .Include(a => a.spieler)
+                                      .Include(a => a.regeln)
+                                            .ThenInclude(r => r.bockRamsch)
+                                      .SingleOrDefaultAsync(m => m.id == id);
 
             if (abend == null)
             {

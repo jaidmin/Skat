@@ -16,7 +16,6 @@
         public Grandwerte grandwert { get; set; }
         public bool grandHandBeiRamsch { get; set; }
         public bool eingepassterRamsch { get; set; }
-        public Zaehlweise zaehlweise { get; set; }
 
     }
 

@@ -37,7 +37,6 @@ namespace Playground
                 kontraNurBeiReizen = true,
                 reErlaubt = true,
                 schneiderAb = SchneiderAb.DREISSIG,
-                zaehlweise = Zaehlweise.KLASSISCH
 
 
             };
